@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TMDB - Home</title>
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="./js/main.js" type="module" defer></script>
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src https: ;
+                img-src 'self' https://image.tmdb.org/; 
+                connect-src 'self' https://api.themoviedb.org; 
+                script-src 'self' 'unsafe-inline'; 
+                style-src 'self' https://fonts.google.com/ https://fonts.googleapis.com/; 
+                font-src 'self' https://fonts.google.com/ https://fonts.gstatic.com/; "
+    />
+  </head>
+  <body id="index">
+    <div class="header">
+      <div class="container">
+        <header>
+          <a href="./index.html">
+            <h1>JAMStack Media App</h1>
+          </a>
+        </header>
+      </div>
+    </div>
+
+    <main>
+      <section class="forms">
+        <div class="container flex">
+          <section class="movie-search">
+            <div class="container">
+              <form class="form" data-media="movie" action="">
+                <label for="movie">Movie</label>
+                <input
+                  id="movie"
+                  name="movie"
+                  type="text"
+                  placeholder="Enter a Movie search"
+                />
+                <button>search</button>
+              </form>
+            </div>
+          </section>
+          <section class="tv-search">
+            <div class="container">
+              <form class="form" data-media="tv" action="">
+                <label for="tv">TV</label>
+                <input
+                  id="tv"
+                  name="tv"
+                  type="text"
+                  placeholder="Enter a TV search"
+                />
+                <button>search</button>
+              </form>
+            </div>
+          </section>
+        </div>
+      </section>
+
+      <div class="card-section container">
+        <div class="error-message"></div>
+        <div class="non-error-messages">
+          <div class="search-message">
+            <!-- insert search message here -->
+          </div>
+          <div class="loader-circle-wrap">
+            <svg
+              class="loader-spinner"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 72 72"
+            >
+              <circle cx="36" cy="36" r="32" stroke-miterlimit="10" />
+            </svg>
+          </div>
+          <div class="user-message">
+            <!-- insert messages to user here (i.e. no results, please enter a search, etc.) -->
+          </div>
+        </div>
+        <div class="content">
+          <ul class="flex card-group" id="movie-tv-cards">
+            <!-- insert movie or tv cards here -->
+          </ul>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
